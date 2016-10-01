@@ -974,7 +974,6 @@ class Form implements \IteratorAggregate, FormInterface
     {
         return $this->children;
     }
-
     /**
      * Returns the number of form children (implements the \Countable interface).
      *

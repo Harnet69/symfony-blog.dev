@@ -30,7 +30,7 @@ class PostController extends Controller
     }
 
     /**
-     *  Show Post entiti in production.
+     *  Show Post entity in production.
      *
      */
     public function ShowPOstAction($id)
