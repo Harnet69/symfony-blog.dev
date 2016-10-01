@@ -568,3 +568,13 @@ bc485e,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/showme/1,1475312350,,20
 053c96,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/showme/1,1475312526,,200
 9f2c67,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/showme/1,1475312526,,200
 9d8d6b,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/showme/1,1475312527,,200
+2ab49c,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/,1475315301,,200
+b3bc88,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/,1475315303,,200
+1d4582,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/,1475315303,,200
+a45c53,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/,1475315303,,200
+8ff355,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/,1475315304,,200
+0f2227,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/admin,1475315309,,200
+01926b,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/admin,1475315310,,200
+4b51d8,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/admin,1475315311,,200
+43b6ac,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/admin,1475315311,,200
+19d42a,127.0.0.1,GET,http://symfony-blog.dev/app_dev.php/admin,1475315311,,200
