@@ -5,3 +5,7 @@ blog_create:
 blog_homepage:
     path:     /blog
     defaults: { _controller: BlogBundle:Blog:Index }
+
+blog_about:
+    path:     /about
+    defaults: { _controller: BlogBundle:About:About }

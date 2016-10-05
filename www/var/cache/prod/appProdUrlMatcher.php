@@ -113,6 +113,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'BlogBundle\\Controller\\BlogController::IndexAction',  '_route' => 'blog_homepage',);
         }
 
+        // blog_about
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'BlogBundle\\Controller\\AboutController::AboutAction',  '_route' => 'blog_about',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

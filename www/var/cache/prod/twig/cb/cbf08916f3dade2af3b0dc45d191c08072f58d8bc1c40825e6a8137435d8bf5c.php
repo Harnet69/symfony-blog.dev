@@ -8,20 +8,27 @@ class __TwigTemplate_3375daaad72259281e11dcca94a08dcd33d4298fb10f323a3313e5a761c
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "@Blog/post/production.html.twig", 1);
+        $this->parent = $this->loadTemplate("BlogBundle:Pages:layout.html.twig", "@Blog/post/production.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "BlogBundle:Pages:layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Блог на продакшне";
     }
 
     // line 3
@@ -71,11 +78,11 @@ class __TwigTemplate_3375daaad72259281e11dcca94a08dcd33d4298fb10f323a3313e5a761c
 
     public function getDebugInfo()
     {
-        return array (  51 => 9,  47 => 8,  43 => 7,  38 => 6,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  58 => 9,  54 => 8,  50 => 7,  45 => 6,  41 => 5,  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
     }
 }
-/* {% extends 'base.html.twig' %}*/
-/* */
+/* {% extends 'BlogBundle:Pages:layout.html.twig' %}*/
+/* {% block title %}Блог на продакшне{% endblock %}*/
 /* {% block body %}*/
 /*     <h1>Мой блог на продакшене</h1>*/
 /*     {% for post in posts %}*/

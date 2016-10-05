@@ -81,6 +81,8 @@
   'DoctrineBundle:Collector:explain.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\vendor\\doctrine\\doctrine-bundle/Resources/views/Collector/explain.html.twig',
   'BlogBundle:Blog:blog.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/Blog/blog.html.twig',
   'BlogBundle:Default:index.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/Default/index.html.twig',
+  'BlogBundle:Pages:about.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/Pages/about.html.twig',
+  'BlogBundle:Pages:layout.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/Pages/layout.html.twig',
   'BlogBundle:post:edit.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/post/edit.html.twig',
   'BlogBundle:post:index.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/post/index.html.twig',
   'BlogBundle:post:new.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/post/new.html.twig',
