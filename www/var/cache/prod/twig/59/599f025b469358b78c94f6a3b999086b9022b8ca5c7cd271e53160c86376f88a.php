@@ -8,7 +8,7 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("BlogBundle:Pages:layout.html.twig", "BlogBundle:post:production.html.twig", 1);
+        $this->parent = $this->loadTemplate("::base.html.twig", "BlogBundle:post:production.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
@@ -17,7 +17,7 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
 
     protected function doGetParent(array $context)
     {
-        return "BlogBundle:Pages:layout.html.twig";
+        return "::base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -81,7 +81,7 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
         return array (  58 => 9,  54 => 8,  50 => 7,  45 => 6,  41 => 5,  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
     }
 }
-/* {% extends 'BlogBundle:Pages:layout.html.twig' %}*/
+/* {% extends '::base.html.twig' %}*/
 /* {% block title %}Блог на продакшне{% endblock %}*/
 /* {% block body %}*/
 /*     <h1>Мой блог на продакшене</h1>*/

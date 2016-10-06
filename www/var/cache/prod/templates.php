@@ -91,4 +91,5 @@
   'BlogBundle:post:showpost.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\src\\BlogBundle/Resources/views/post/showpost.html.twig',
   '::base.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\app/Resources\\views/base.html.twig',
   ':default:index.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\app/Resources\\views/default/index.html.twig',
+  '::page.html.twig' => 'C:\\wamp64\\www\\symfony-blog.dev\\www\\app/Resources\\views/page.html.twig',
 );

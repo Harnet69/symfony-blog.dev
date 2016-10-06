@@ -1,11 +1,11 @@
-{% extends "::base:html.twig" %};
+{% extends '::base.html.twig' %}
 {% block body %}
     {% block header %}
         <header>
             {% block logo %}
                 <div class="block block-logo">
                     <div class="site-logo">
-                        <img src="#"/>
+                        <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo.png") }}"></a>
                     </div>
                 </div>
             {% endblock %}
@@ -19,14 +19,18 @@
     {% endblock %}
 
     {% block content %}
-        {% block side_title %}
-            <div class="page title" id="page_title">
-                <h1>{% block page_title %}Page title{% endblock %}</h1>
-            </div>
-        {% endblock %}
+        <div id="main_container">
+            {% block site_title %}
+                <div class="page title" id="page_title">
+                    <h1>{% block page_title %}Page title{% endblock %}</h1>
+                </div>
+            {% endblock %}
+            <main>
+                {% block main %}
+                {% endblock %}
+            </main>
+        </div>
     {% endblock %}
-
-    {% block main %}{% endblock %}
 
     {% block futer %}
         <footer role="contentinfo">

@@ -32,9 +32,7 @@ class __TwigTemplate_255c7f50f9bca0142cd1cf66e60270b88685212d10ab87dccee9932882d
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 9
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
+        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"/bundles/BlogBundle/images/hornet_logo.ico\" />
     </head>
     <body>
         ";
@@ -59,7 +57,9 @@ class __TwigTemplate_255c7f50f9bca0142cd1cf66e60270b88685212d10ab87dccee9932882d
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 7
-        echo "            <link rel=\"stylesheet\" href=\"bundles/BlogBundle/css/symfony-blog.css\" />
+        echo "            <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/BlogBundle/css/symfony-blog.css"), "html", null, true);
+        echo "\" />
         ";
     }
 
@@ -78,14 +78,9 @@ class __TwigTemplate_255c7f50f9bca0142cd1cf66e60270b88685212d10ab87dccee9932882d
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  72 => 13,  67 => 12,  62 => 7,  59 => 6,  53 => 5,  47 => 14,  44 => 13,  42 => 12,  35 => 9,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  72 => 13,  67 => 12,  60 => 7,  57 => 6,  51 => 5,  45 => 14,  42 => 13,  40 => 12,  35 => 9,  33 => 6,  29 => 5,  23 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -94,9 +89,9 @@ class __TwigTemplate_255c7f50f9bca0142cd1cf66e60270b88685212d10ab87dccee9932882d
 /*         <meta charset="UTF-8" />*/
 /*         <title>{% block title %}Мой блог{% endblock %}</title>*/
 /*         {% block stylesheets %}*/
-/*             <link rel="stylesheet" href="bundles/BlogBundle/css/symfony-blog.css" />*/
+/*             <link rel="stylesheet" href="{{asset("bundles/BlogBundle/css/symfony-blog.css") }}" />*/
 /*         {% endblock %}*/
-/*         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />*/
+/*         <link rel="icon" type="image/x-icon" href="/bundles/BlogBundle/images/hornet_logo.ico" />*/
 /*     </head>*/
 /*     <body>*/
 /*         {% block body %}{% endblock %}*/
