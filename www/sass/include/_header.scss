@@ -1,0 +1,43 @@
+.header {
+  background-color: $cbd;
+  .logo-header {
+    margin: 2px auto;
+    width: $display;
+    height: 70px;
+      .block-logo {
+        float: left;
+        width: 15%;
+      }
+      .block-logo-rev {
+        float: right;
+        width: 15%;
+      }
+      .main_menu {
+        float: right;
+        margin-top: 10px;
+        width:auto;
+                ul {
+          list-style: none;
+          li {
+            float: left;
+            margin-left: 15px;
+            a{
+              text-decoration: none;
+              color: #1E1718;
+              background-color: #F7B800;
+              padding: 2px 5px;
+              border: 1px solid #F7B800;
+              border-radius: 7px;
+              font-family: "Calibri Light";
+              font-weight: bold;
+              text-transform: uppercase;
+              }
+            a:hover{
+              color :#F7B800;
+              background-color: #A4A4AF;
+            }
+          }
+        }
+      }
+  }
+}

@@ -1,11 +1,12 @@
-{% extends '::base.html.twig' %}
-{% block title %}Блог на продакшне{% endblock %}
-{% block body %}
-    <h1>Мой блог на продакшене</h1>
-    {% for post in posts %}
-            <h2>{{ post.title|upper }}</h2>
-            <p>{{ post.description }}
-            <a href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>
-            <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
-    {% endfor %}
-{% endblock %}
+{% extends '::page.html.twig' %}
+     {% block site_title %}
+        <h1>Мой блог на продакшене</h1>
+     {% endblock %}
+     {% block main %}
+        {% for post in posts %}
+                <h2>{{ post.title|upper }}</h2>
+                <p>{{ post.description }}
+                <a href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>
+                <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
+        {% endfor %}
+     {% endblock %}

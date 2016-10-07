@@ -1,25 +1,30 @@
 {% extends '::base.html.twig' %}
 {% block body %}
     {% block header %}
-        <header>
-            {% block logo %}
-                <div class="block block-logo">
-                    <div class="site-logo">
-                        <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo.png") }}"></a>
+        <div class="header" role="header">
+            <div class="logo-header">
+                {% block logo %}
+                    <div class="block block-logo">
+                            <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo.png") }}"></a>
                     </div>
-                </div>
-            {% endblock %}
-            {% block main_menu %}
-                <ul>
-                    <li><a href="{{ path('create_prod') }}">Главная</a></li>
-                    <li><a href="{{ path('blog_about') }}">О нас</a></li>
-                </ul>
-            {% endblock %}
-        </header>
+                    <div class="block block-logo-rev">
+                        <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo_rev.png") }}"></a>
+                    </div>
+                {% endblock %}
+                {% block main_menu %}
+                    <div class="main_menu" id="menu_main_menu">
+                        <ul>
+                            <li><a href="{{ path('create_prod') }}">Главная</a></li>
+                            <li><a href="{{ path('blog_about') }}">О нас</a></li>
+                        </ul>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
     {% endblock %}
 
     {% block content %}
-        <div id="main_container">
+        <div class="main_container">
             {% block site_title %}
                 <div class="page title" id="page_title">
                     <h1>{% block page_title %}Page title{% endblock %}</h1>
@@ -27,6 +32,7 @@
             {% endblock %}
             <main>
                 {% block main %}
+                    Чтота
                 {% endblock %}
             </main>
         </div>

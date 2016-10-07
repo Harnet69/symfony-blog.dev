@@ -1,6 +1,6 @@
 @import "normalize";
 @import "include/variable";
 @import "include/typografy";
-body{
-  background-color: #629755;
-}
+@import "include/header";
+@import "include/footer.scss";
+@import "include/main.scss";

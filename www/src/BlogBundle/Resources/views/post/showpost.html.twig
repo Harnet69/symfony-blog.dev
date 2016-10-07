@@ -1,7 +1,9 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-         <h2>{{ post.title|upper }}</h2>
-        <p>{{ post.description }}
-        <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
-{% endblock %}
+{% extends '::page.html.twig' %}
+     {% block site_title %}
+         <h1>Мой блог на продакшене</h1>
+     {% endblock %}
+     {% block main %}
+             <h2>{{ post.title|upper }}</h2>
+             <p>{{ post.description }}
+             <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>
+     {% endblock %}

@@ -8,16 +8,16 @@ class __TwigTemplate_3375daaad72259281e11dcca94a08dcd33d4298fb10f323a3313e5a761c
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "@Blog/post/production.html.twig", 1);
+        $this->parent = $this->loadTemplate("::page.html.twig", "@Blog/post/production.html.twig", 1);
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
-            'body' => array($this, 'block_body'),
+            'site_title' => array($this, 'block_site_title'),
+            'main' => array($this, 'block_main'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "::page.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -26,44 +26,46 @@ class __TwigTemplate_3375daaad72259281e11dcca94a08dcd33d4298fb10f323a3313e5a761c
     }
 
     // line 2
-    public function block_title($context, array $blocks = array())
+    public function block_site_title($context, array $blocks = array())
     {
-        echo "Блог на продакшне";
+        // line 3
+        echo "        <h1>Мой блог на продакшене</h1>
+     ";
     }
 
-    // line 3
-    public function block_body($context, array $blocks = array())
+    // line 5
+    public function block_main($context, array $blocks = array())
     {
-        // line 4
-        echo "    <h1>Мой блог на продакшене</h1>
-    ";
-        // line 5
+        // line 6
+        echo "        ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) ? $context["posts"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 6
-            echo "            <h2>";
+            // line 7
+            echo "                <h2>";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["post"], "title", array())), "html", null, true);
             echo "</h2>
-            <p>";
-            // line 7
+                <p>";
+            // line 8
             echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "description", array()), "html", null, true);
             echo "
-            <a href=\"";
-            // line 8
+                <a href=\"";
+            // line 9
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("create_showPost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
             echo "\">...ещё</a></p>
-            <p>";
-            // line 9
+                <p>";
+            // line 10
             if ($this->getAttribute($context["post"], "datetime", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["post"], "datetime", array()), "Y-m-d H:i"), "html", null, true);
             }
             echo "</p>
-    ";
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "     ";
     }
 
     public function getTemplateName()
@@ -78,18 +80,18 @@ class __TwigTemplate_3375daaad72259281e11dcca94a08dcd33d4298fb10f323a3313e5a761c
 
     public function getDebugInfo()
     {
-        return array (  58 => 9,  54 => 8,  50 => 7,  45 => 6,  41 => 5,  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
+        return array (  68 => 12,  58 => 10,  54 => 9,  50 => 8,  45 => 7,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
-/* {% block title %}Блог на продакшне{% endblock %}*/
-/* {% block body %}*/
-/*     <h1>Мой блог на продакшене</h1>*/
-/*     {% for post in posts %}*/
-/*             <h2>{{ post.title|upper }}</h2>*/
-/*             <p>{{ post.description }}*/
-/*             <a href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>*/
-/*             <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>*/
-/*     {% endfor %}*/
-/* {% endblock %}*/
-/* */
+/* {% extends '::page.html.twig' %}*/
+/*      {% block site_title %}*/
+/*         <h1>Мой блог на продакшене</h1>*/
+/*      {% endblock %}*/
+/*      {% block main %}*/
+/*         {% for post in posts %}*/
+/*                 <h2>{{ post.title|upper }}</h2>*/
+/*                 <p>{{ post.description }}*/
+/*                 <a href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>*/
+/*                 <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>*/
+/*         {% endfor %}*/
+/*      {% endblock %}*/
