@@ -1,7 +1,7 @@
 {% extends 'BlogBundle:Pages:layout.html.twig' %}
-{% block title %}Админка{% endblock %}
+{% block title %}Admin area{% endblock %}
 {% block body %}
-    <h1>Блог в админке</h1>
+    <h1>Admin area</h1>
     <table>
         <thead>
             <tr>
@@ -36,7 +36,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('create_new') }}">Create a new entry</a>
+            <a href="{{ path('create_new') }}">Add new post</a>
         </li>
+        <li>    <a href="{{ path('create_prod') }}">Production area</a></li>
     </ul>
 {% endblock %}

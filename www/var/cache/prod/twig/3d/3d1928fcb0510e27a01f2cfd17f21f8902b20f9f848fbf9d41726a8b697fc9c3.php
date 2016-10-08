@@ -8,15 +8,16 @@ class __TwigTemplate_21f145636f2beb00a865d52fb7d168de5ae8b4ecc022f3080332c375a84
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "BlogBundle:post:showpost.html.twig", 1);
+        $this->parent = $this->loadTemplate("::page.html.twig", "BlogBundle:post:showpost.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'site_title' => array($this, 'block_site_title'),
+            'main' => array($this, 'block_main'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "::page.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -24,24 +25,30 @@ class __TwigTemplate_21f145636f2beb00a865d52fb7d168de5ae8b4ecc022f3080332c375a84
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
-    public function block_body($context, array $blocks = array())
+    // line 2
+    public function block_site_title($context, array $blocks = array())
     {
-        // line 4
+        // line 3
         echo "         <h2>";
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "title", array())), "html", null, true);
         echo "</h2>
-        <p>";
-        // line 5
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "description", array()), "html", null, true);
-        echo "
-        <p>";
+     ";
+    }
+
+    // line 5
+    public function block_main($context, array $blocks = array())
+    {
         // line 6
+        echo "              <p>";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "description", array()), "html", null, true);
+        echo "</p>
+             <p>";
+        // line 7
         if ($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "datetime", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "datetime", array()), "Y-m-d H:i"), "html", null, true);
         }
         echo "</p>
-";
+     ";
     }
 
     public function getTemplateName()
@@ -56,13 +63,14 @@ class __TwigTemplate_21f145636f2beb00a865d52fb7d168de5ae8b4ecc022f3080332c375a84
 
     public function getDebugInfo()
     {
-        return array (  40 => 6,  36 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  47 => 7,  42 => 6,  39 => 5,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
-/* {% extends 'base.html.twig' %}*/
-/* */
-/* {% block body %}*/
+/* {% extends '::page.html.twig' %}*/
+/*      {% block site_title %}*/
 /*          <h2>{{ post.title|upper }}</h2>*/
-/*         <p>{{ post.description }}*/
-/*         <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>*/
-/* {% endblock %}*/
+/*      {% endblock %}*/
+/*      {% block main %}*/
+/*               <p>{{ post.description }}</p>*/
+/*              <p>{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>*/
+/*      {% endblock %}*/

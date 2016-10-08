@@ -22,35 +22,35 @@ class __TwigTemplate_d989a5ac9ad1d8afee06692c0ee604f523bc026bcdbefba537ea8f4e5bb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fbd26baeab01235fde1dfe057b06ef1b883f895be5e827df8924a8aab33121a5 = $this->env->getExtension("native_profiler");
-        $__internal_fbd26baeab01235fde1dfe057b06ef1b883f895be5e827df8924a8aab33121a5->enter($__internal_fbd26baeab01235fde1dfe057b06ef1b883f895be5e827df8924a8aab33121a5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:post:index.html.twig"));
+        $__internal_2b6b13aa9a73818caa04edd438821c4f88c83656137f2858f450d732927c3a89 = $this->env->getExtension("native_profiler");
+        $__internal_2b6b13aa9a73818caa04edd438821c4f88c83656137f2858f450d732927c3a89->enter($__internal_2b6b13aa9a73818caa04edd438821c4f88c83656137f2858f450d732927c3a89_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:post:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_fbd26baeab01235fde1dfe057b06ef1b883f895be5e827df8924a8aab33121a5->leave($__internal_fbd26baeab01235fde1dfe057b06ef1b883f895be5e827df8924a8aab33121a5_prof);
+        $__internal_2b6b13aa9a73818caa04edd438821c4f88c83656137f2858f450d732927c3a89->leave($__internal_2b6b13aa9a73818caa04edd438821c4f88c83656137f2858f450d732927c3a89_prof);
 
     }
 
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        $__internal_17a2554735af5c6aa3f4ab290e48bdafc00424698afdbebb45b9cee28ff0c42d = $this->env->getExtension("native_profiler");
-        $__internal_17a2554735af5c6aa3f4ab290e48bdafc00424698afdbebb45b9cee28ff0c42d->enter($__internal_17a2554735af5c6aa3f4ab290e48bdafc00424698afdbebb45b9cee28ff0c42d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_022b4db274c96e9696e276a1d9ac957f26d8517ba52ab4562f05379974d1f1f8 = $this->env->getExtension("native_profiler");
+        $__internal_022b4db274c96e9696e276a1d9ac957f26d8517ba52ab4562f05379974d1f1f8->enter($__internal_022b4db274c96e9696e276a1d9ac957f26d8517ba52ab4562f05379974d1f1f8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Админка";
+        echo "Admin area";
         
-        $__internal_17a2554735af5c6aa3f4ab290e48bdafc00424698afdbebb45b9cee28ff0c42d->leave($__internal_17a2554735af5c6aa3f4ab290e48bdafc00424698afdbebb45b9cee28ff0c42d_prof);
+        $__internal_022b4db274c96e9696e276a1d9ac957f26d8517ba52ab4562f05379974d1f1f8->leave($__internal_022b4db274c96e9696e276a1d9ac957f26d8517ba52ab4562f05379974d1f1f8_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4d2ae4b250b127bebc28bc25be74cf22488f64439d120d99c8f113ff54747807 = $this->env->getExtension("native_profiler");
-        $__internal_4d2ae4b250b127bebc28bc25be74cf22488f64439d120d99c8f113ff54747807->enter($__internal_4d2ae4b250b127bebc28bc25be74cf22488f64439d120d99c8f113ff54747807_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b0068ea3c047e173d519555cf6bcdb2815ca70a9b9b89f0ecd25dfe032ef2eb2 = $this->env->getExtension("native_profiler");
+        $__internal_b0068ea3c047e173d519555cf6bcdb2815ca70a9b9b89f0ecd25dfe032ef2eb2->enter($__internal_b0068ea3c047e173d519555cf6bcdb2815ca70a9b9b89f0ecd25dfe032ef2eb2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Блог в админке</h1>
+        echo "    <h1>Admin area</h1>
     <table>
         <thead>
             <tr>
@@ -120,12 +120,16 @@ class __TwigTemplate_d989a5ac9ad1d8afee06692c0ee604f523bc026bcdbefba537ea8f4e5bb
             <a href=\"";
         // line 39
         echo $this->env->getExtension('routing')->getPath("create_new");
-        echo "\">Create a new entry</a>
+        echo "\">Add new post</a>
         </li>
+        <li>    <a href=\"";
+        // line 41
+        echo $this->env->getExtension('routing')->getPath("create_prod");
+        echo "\">Production area</a></li>
     </ul>
 ";
         
-        $__internal_4d2ae4b250b127bebc28bc25be74cf22488f64439d120d99c8f113ff54747807->leave($__internal_4d2ae4b250b127bebc28bc25be74cf22488f64439d120d99c8f113ff54747807_prof);
+        $__internal_b0068ea3c047e173d519555cf6bcdb2815ca70a9b9b89f0ecd25dfe032ef2eb2->leave($__internal_b0068ea3c047e173d519555cf6bcdb2815ca70a9b9b89f0ecd25dfe032ef2eb2_prof);
 
     }
 
@@ -141,13 +145,13 @@ class __TwigTemplate_d989a5ac9ad1d8afee06692c0ee604f523bc026bcdbefba537ea8f4e5bb
 
     public function getDebugInfo()
     {
-        return array (  122 => 39,  115 => 34,  103 => 28,  97 => 25,  88 => 21,  84 => 20,  80 => 19,  74 => 18,  71 => 17,  67 => 16,  53 => 4,  47 => 3,  35 => 2,  11 => 1,);
+        return array (  127 => 41,  122 => 39,  115 => 34,  103 => 28,  97 => 25,  88 => 21,  84 => 20,  80 => 19,  74 => 18,  71 => 17,  67 => 16,  53 => 4,  47 => 3,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends 'BlogBundle:Pages:layout.html.twig' %}*/
-/* {% block title %}Админка{% endblock %}*/
+/* {% block title %}Admin area{% endblock %}*/
 /* {% block body %}*/
-/*     <h1>Блог в админке</h1>*/
+/*     <h1>Admin area</h1>*/
 /*     <table>*/
 /*         <thead>*/
 /*             <tr>*/
@@ -182,8 +186,8 @@ class __TwigTemplate_d989a5ac9ad1d8afee06692c0ee604f523bc026bcdbefba537ea8f4e5bb
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('create_new') }}">Create a new entry</a>*/
+/*             <a href="{{ path('create_new') }}">Add new post</a>*/
 /*         </li>*/
+/*         <li>    <a href="{{ path('create_prod') }}">Production area</a></li>*/
 /*     </ul>*/
 /* {% endblock %}*/
-/* */

@@ -28,14 +28,14 @@ class __TwigTemplate_5f2fc400d43edc1f7eb4be6a3d0b64efca83d41288439631255d173aa3e
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        echo "Админка";
+        echo "Admin area";
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <h1>Блог в админке</h1>
+        echo "    <h1>Admin area</h1>
     <table>
         <thead>
             <tr>
@@ -105,8 +105,12 @@ class __TwigTemplate_5f2fc400d43edc1f7eb4be6a3d0b64efca83d41288439631255d173aa3e
             <a href=\"";
         // line 39
         echo $this->env->getExtension('routing')->getPath("create_new");
-        echo "\">Create a new entry</a>
+        echo "\">Add new post</a>
         </li>
+        <li>    <a href=\"";
+        // line 41
+        echo $this->env->getExtension('routing')->getPath("create_prod");
+        echo "\">Production area</a></li>
     </ul>
 ";
     }
@@ -123,13 +127,13 @@ class __TwigTemplate_5f2fc400d43edc1f7eb4be6a3d0b64efca83d41288439631255d173aa3e
 
     public function getDebugInfo()
     {
-        return array (  107 => 39,  100 => 34,  88 => 28,  82 => 25,  73 => 21,  69 => 20,  65 => 19,  59 => 18,  56 => 17,  52 => 16,  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
+        return array (  112 => 41,  107 => 39,  100 => 34,  88 => 28,  82 => 25,  73 => 21,  69 => 20,  65 => 19,  59 => 18,  56 => 17,  52 => 16,  38 => 4,  35 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'BlogBundle:Pages:layout.html.twig' %}*/
-/* {% block title %}Админка{% endblock %}*/
+/* {% block title %}Admin area{% endblock %}*/
 /* {% block body %}*/
-/*     <h1>Блог в админке</h1>*/
+/*     <h1>Admin area</h1>*/
 /*     <table>*/
 /*         <thead>*/
 /*             <tr>*/
@@ -164,8 +168,8 @@ class __TwigTemplate_5f2fc400d43edc1f7eb4be6a3d0b64efca83d41288439631255d173aa3e
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('create_new') }}">Create a new entry</a>*/
+/*             <a href="{{ path('create_new') }}">Add new post</a>*/
 /*         </li>*/
+/*         <li>    <a href="{{ path('create_prod') }}">Production area</a></li>*/
 /*     </ul>*/
 /* {% endblock %}*/
-/* */

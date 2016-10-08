@@ -5,7 +5,7 @@
             <div class="logo-header">
                 {% block logo %}
                     <div class="block block-logo">
-                            <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo.png") }}"></a>
+                            <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo_sign.png") }}"></a>
                     </div>
                     <div class="block block-logo-rev">
                         <a href="{{ path('create_prod') }}"><img src="{{asset("bundles/BlogBundle/images/hornet_logo_rev.png") }}"></a>
@@ -14,8 +14,8 @@
                 {% block main_menu %}
                     <div class="main_menu" id="menu_main_menu">
                         <ul>
-                            <li><a href="{{ path('create_prod') }}">Главная</a></li>
-                            <li><a href="{{ path('blog_about') }}">О нас</a></li>
+                            <li><a href="{{ path('create_prod') }}">Main</a></li>
+                            <li><a href="{{ path('blog_about') }}">About me</a></li>
                         </ul>
                     </div>
                 {% endblock %}
@@ -41,7 +41,7 @@
     {% block futer %}
         <footer role="contentinfo">
             <div class="block block-copyright">
-                Copyright & copy; 2016. All right reserved.
+                Produced by Harnet 2016. All right reserved.
             </div>
         </footer>
     {% endblock %}
