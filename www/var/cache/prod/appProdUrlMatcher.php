@@ -27,6 +27,68 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/admin')) {
+            // create_index
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_create_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'create_index');
+                }
+
+                return array (  '_controller' => 'BlogBundle\\Controller\\PostController::indexAction',  '_route' => 'create_index',);
+            }
+            not_create_index:
+
+            // create_show
+            if (preg_match('#^/admin/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_create_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_show')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::showAction',));
+            }
+            not_create_show:
+
+            // create_new
+            if ($pathinfo === '/admin/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_create_new;
+                }
+
+                return array (  '_controller' => 'BlogBundle\\Controller\\PostController::newAction',  '_route' => 'create_new',);
+            }
+            not_create_new:
+
+            // create_edit
+            if (preg_match('#^/admin/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_create_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_edit')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::editAction',));
+            }
+            not_create_edit:
+
+            // create_delete
+            if (preg_match('#^/admin/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_create_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_delete')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::deleteAction',));
+            }
+            not_create_delete:
+
+        }
+
         // create_prod
         if (rtrim($pathinfo, '/') === '') {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -42,28 +104,6 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         }
         not_create_prod:
 
-        // create_index
-        if ($pathinfo === '/admin') {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_create_index;
-            }
-
-            return array (  '_controller' => 'BlogBundle\\Controller\\PostController::indexAction',  '_route' => 'create_index',);
-        }
-        not_create_index:
-
-        // create_show
-        if (preg_match('#^/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_create_show;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_show')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::showAction',));
-        }
-        not_create_show:
-
         // create_showPost
         if (0 === strpos($pathinfo, '/showme') && preg_match('#^/showme/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -74,39 +114,6 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_showPost')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::ShowPOstAction',));
         }
         not_create_showPost:
-
-        // create_new
-        if ($pathinfo === '/new') {
-            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                goto not_create_new;
-            }
-
-            return array (  '_controller' => 'BlogBundle\\Controller\\PostController::newAction',  '_route' => 'create_new',);
-        }
-        not_create_new:
-
-        // create_edit
-        if (preg_match('#^/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                goto not_create_edit;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_edit')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::editAction',));
-        }
-        not_create_edit:
-
-        // create_delete
-        if (preg_match('#^/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-            if ($this->context->getMethod() != 'DELETE') {
-                $allow[] = 'DELETE';
-                goto not_create_delete;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_delete')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::deleteAction',));
-        }
-        not_create_delete:
 
         // blog_homepage
         if ($pathinfo === '/blog') {

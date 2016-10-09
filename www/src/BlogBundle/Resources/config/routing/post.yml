@@ -1,15 +1,5 @@
-create_prod:
-    path:     /
-    defaults: { _controller: "BlogBundle:Post:Prod" }
-    methods:  GET
-
-create_showPost:
-    path:     /showme/{id}
-    defaults: { _controller: "BlogBundle:Post:ShowPOst" }
-    methods:  GET
-
 create_index:
-    path:     /admin
+    path:     /
     defaults: { _controller: "BlogBundle:Post:index" }
     methods:  GET
 

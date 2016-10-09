@@ -1,6 +1,16 @@
-blog_create:
+admin_blog:
     resource: "@BlogBundle/Resources/config/routing/post.yml"
-    prefix:   /
+    prefix:   /admin
+
+create_prod:
+    path:     /
+    defaults: { _controller: "BlogBundle:Post:Prod" }
+    methods:  GET
+
+create_showPost:
+    path:     /showme/{id}
+    defaults: { _controller: "BlogBundle:Post:ShowPOst" }
+    methods:  GET
 
 blog_homepage:
     path:     /blog
