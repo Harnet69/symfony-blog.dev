@@ -42,32 +42,36 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
         $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) ? $context["posts"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 7
-            echo "                <h2><a href=\"";
+            echo "            <div class=\"main_post\">
+                <h2><a href=\"";
+            // line 8
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("create_showPost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["post"], "title", array())), "html", null, true);
             echo "</a></h2>
                 <p id=\"post_date\">";
-            // line 8
+            // line 9
             if ($this->getAttribute($context["post"], "datetime", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["post"], "datetime", array()), "Y-m-d H:i"), "html", null, true);
             }
             echo "</p>
                 <p>";
-            // line 9
+            // line 10
             echo twig_escape_filter($this->env, twig_slice($this->env, $this->getAttribute($context["post"], "description", array()), 0, 300), "html", null, true);
             echo "
-                <a href=\"";
-            // line 10
+                <a id=\"main_post_next\" href=\"";
+            // line 11
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("create_showPost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
             echo "\">...ещё</a></p>
+            </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 12
-        echo "     ";
+        // line 14
+        echo "
+     ";
     }
 
     public function getTemplateName()
@@ -82,7 +86,7 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
 
     public function getDebugInfo()
     {
-        return array (  70 => 12,  62 => 10,  58 => 9,  52 => 8,  45 => 7,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  73 => 14,  64 => 11,  60 => 10,  54 => 9,  48 => 8,  45 => 7,  40 => 6,  37 => 5,  32 => 3,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends '::page.html.twig' %}*/
@@ -91,9 +95,12 @@ class __TwigTemplate_0c259edd23a533db054e0fe062b59d68984919d61c958218ec9caeed4d4
 /*      {% endblock %}*/
 /*      {% block main %}*/
 /*         {% for post in posts %}*/
+/*             <div class="main_post">*/
 /*                 <h2><a href="{{ path('create_showPost', { 'id': post.id }) }}">{{ post.title|upper }}</a></h2>*/
 /*                 <p id="post_date">{% if post.datetime %}{{ post.datetime|date('Y-m-d H:i') }}{% endif %}</p>*/
 /*                 <p>{{ post.description|slice(0, 300) }}*/
-/*                 <a href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>*/
+/*                 <a id="main_post_next" href="{{ path('create_showPost', { 'id': post.id }) }}">...ещё</a></p>*/
+/*             </div>*/
 /*         {% endfor %}*/
+/* */
 /*      {% endblock %}*/

@@ -3,6 +3,11 @@ create_prod:
     defaults: { _controller: "BlogBundle:Post:Prod" }
     methods:  GET
 
+create_showPost:
+    path:     /showme/{id}
+    defaults: { _controller: "BlogBundle:Post:ShowPOst" }
+    methods:  GET
+
 create_index:
     path:     /admin
     defaults: { _controller: "BlogBundle:Post:index" }
@@ -11,11 +16,6 @@ create_index:
 create_show:
     path:     /{id}/show
     defaults: { _controller: "BlogBundle:Post:show" }
-    methods:  GET
-
-create_showPost:
-    path:     /showme/{id}
-    defaults: { _controller: "BlogBundle:Post:ShowPOst" }
     methods:  GET
 
 create_new:

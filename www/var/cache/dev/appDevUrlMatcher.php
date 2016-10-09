@@ -115,6 +115,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_create_prod:
 
+        // create_showPost
+        if (0 === strpos($pathinfo, '/showme') && preg_match('#^/showme/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_create_showPost;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_showPost')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::ShowPOstAction',));
+        }
+        not_create_showPost:
+
         // create_index
         if ($pathinfo === '/admin') {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
@@ -136,17 +147,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_show')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::showAction',));
         }
         not_create_show:
-
-        // create_showPost
-        if (0 === strpos($pathinfo, '/showme') && preg_match('#^/showme/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_create_showPost;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'create_showPost')), array (  '_controller' => 'BlogBundle\\Controller\\PostController::ShowPOstAction',));
-        }
-        not_create_showPost:
 
         // create_new
         if ($pathinfo === '/new') {
