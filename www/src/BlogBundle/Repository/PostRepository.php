@@ -10,4 +10,18 @@ namespace BlogBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    /*Find quantity of posts*/
+    public function findAllBlogCont(){
+        $query = $this->createQueryBuilder("b");
+        $query->select("count(b)");
+        return $query->getQuery()->getOneOrNullResult();
+    }
+
+    /*Show a specified number of posts in main page*/
+    public function findBlog($page = 0){
+        $query = $this->createQueryBuilder("b");
+        $query->select("b");
+        $query->setMaxResults(3);
+        return $query->getQuery()->getResult();
+    }
 }
