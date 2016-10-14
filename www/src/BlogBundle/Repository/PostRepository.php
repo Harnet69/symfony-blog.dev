@@ -18,10 +18,17 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /*Show a specified number of posts in main page*/
-    public function findBlog($page = 0){
+    public function findBlog(array $context = []){
         $query = $this->createQueryBuilder("b");
         $query->select("b");
-        $query->setMaxResults(3);
+        $query->setMaxResults(3);   
+        $query->orderBy("b.id", "DESC");
+        $page = 0;
+        if(isset($context["page"]) && is_numeric($context["page"]) && $context["page"]>1){
+            $page = 3 * ($context["page"]-1);
+        }
+
+        $query->setFirstResult($page);
         return $query->getQuery()->getResult();
     }
 }

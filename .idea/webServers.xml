@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7a7c9ba3-1828-4e7e-87a1-9e80164ebed1" name="Digital Ocean" url="http://95.85.17.160">
+        <fileTransfer host="95.85.17.160" port="21" rootFolder="/web/harnet.ru/public_html" password="dfc7dfc5dfdedfc5dfc1dfc5dfdedfc5df98df9cdf98df92" username="harnet">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -20,11 +20,11 @@ class PostController extends Controller
      */
     public function ProdAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine();
         $em = $em->getRepository('BlogBundle:Post');
         $countBlog = $em->findAllBlogCont();
-        var_dump($countBlog);
-        $posts = $em->findBlog();
+       //var_dump($countBlog);
+        $posts = $em->findBlog(["page"=>1]);
 
         return $this->render('BlogBundle:post:production.html.twig', array(
             'posts' => $posts,
